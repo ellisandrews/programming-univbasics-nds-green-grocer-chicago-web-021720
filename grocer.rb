@@ -73,7 +73,12 @@ def apply_coupons(cart, coupons)
         cart[cart_index] = item
       
         # Add coupon'd items to cart
-        cart << {:item => coupon_item + " W/COUPON", :price =>  coupon_cost/coupon_num, :count => coupon_num}
+        cart << {
+          :item => coupon_item + " W/COUPON", 
+          :price =>  coupon_cost/coupon_num, 
+          :clearance => item[:clearance],
+          :count => coupon_num
+        }
       end
     
     end
